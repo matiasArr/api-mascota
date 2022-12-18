@@ -1,27 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
 
-    const Vacuna = sequelize.define('vacuna', {
-        id_vacuna: {
+    const Control = sequelize.define("control", {
+        id_control: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        nombre_vacuna: {
+        mascota_id: {
             type: DataTypes.STRING,
         },
-        mes_aplicacion: {
+        vacuna_id: {
             type: DataTypes.INTEGER,
         },
-        cantidad_dosis: {
-            type: DataTypes.INTEGER,
+        fecha_control: {
+            type: DataTypes.DATEONLY,
         },
-        especie: {
-            type: DataTypes.STRING,
-        },
+        
     },
         {
             timestamps: false
         }
-    );
-    return Vacuna
+        );
+        
+
+    return Control;
 }

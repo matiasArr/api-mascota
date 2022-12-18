@@ -38,6 +38,7 @@ db.sequelize = sequelize
 db.propietario = require('./propietario.model.js')(sequelize, DataTypes)
 db.mascota = require('./mascota.model.js')(sequelize, DataTypes)
 db.vacuna = require('./vacuna.model.js')(sequelize, DataTypes)
+db.control = require('./control.model.js')(sequelize, DataTypes)
 
 
 // --------------ESTO SE DEBE CAMBIAR A FALSE -------------
@@ -58,17 +59,17 @@ db.mascota.belongsTo(db.propietario, {
     foreignKey: 'propietario_id',
     as: 'propietario'
 })
-  
-// db.mascota.belongsToMany(db.vacuna, {
-//     through: 'mascota_vacuna',
-//     as: 'vacuna',
-//     foreignKey: 'mascota_id'
-// })
 
-// db.vacuna.belongsToMany(db.mascota, {
-//     through: 'mascota_vacuna',
-//     as: 'mascota',
-//     foreignKey: 'vacuna_id'
-// })
+db.mascota.belongsToMany(db.vacuna, {
+    through: db.control,
+    foreignKey: 'mascota_id',
+    otherKey: 'vacuna_id'
+})
+
+db.vacuna.belongsToMany(db.mascota, {
+    through: db.control,
+    foreignKey: 'vacuna_id',
+    otherKey: 'mascota_id'
+})
 
 module.exports = db

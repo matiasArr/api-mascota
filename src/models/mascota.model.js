@@ -1,30 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
 
     const Mascota = sequelize.define("mascota", {
-        numMicrochip: {
+        num_microchip: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: false,
         },
-        nombreMascota: {
+        nombre_mascota: {
             type: DataTypes.STRING,
         },
-        fechaNacimiento: {
+        fecha_nacimiento: {
             type: DataTypes.DATEONLY,
         },
-        sexoMascota: {
+        sexo_mascota: {
             type: DataTypes.STRING,
         },
-        especieMascota: {
+        especie_mascota: {
             type: DataTypes.STRING,
         },
-        razaMascota: {
+        raza_mascota: {
             type: DataTypes.STRING,
         },
-        icono: {
-            type: DataTypes.STRING,
-        },
-        fotoMascota: {
+        foto_mascota: {
             type: DataTypes.STRING,
         },
         enfermedad: {

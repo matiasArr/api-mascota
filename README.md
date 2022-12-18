@@ -1,6 +1,10 @@
 # api-mascota
 API QUE RETORNE TODAS LAS MASCOTAS DEL PROPIETARIO JUNTO CON SU INFORMACIÓN ADEMÁS DE LAS VACUNAS
 
+# TAREAS POR HACER
+- CRUD mascota
+- CRUD propietario
+- CRUD vacuna
 # Compromisos del proyecto
 
 - Vista 1: Listado con todas las mascotas que tiene un propietario

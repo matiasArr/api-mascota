@@ -1,21 +1,21 @@
 module.exports = (sequelize, DataTypes) => {
 
     const Propietario = sequelize.define("propietario", {
-        idPropietario: {
+        id_propietario: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        nombrePropietario: {
+        nombre: {
             type: DataTypes.STRING,
         },
-        direccionPropietario: {
+        direccion: {
             type: DataTypes.STRING,
         },
-        telefonoPropietario: {
+        telefono: {
             type: DataTypes.STRING,
         },
-        emailPropietario: {
+        email: {
             type: DataTypes.STRING,
         }
     },
